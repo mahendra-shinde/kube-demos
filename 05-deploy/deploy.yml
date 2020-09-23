@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2
+  namespace: mahendra
+spec:
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      imagePullSecrets:
+          - name: secreg
+      containers:
+      - name: web
+        image: reg101.azurecr.io/myweb:latest
+        ports:
+        - containerPort: 80
+    
+        
