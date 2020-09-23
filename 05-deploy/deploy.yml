@@ -19,5 +19,3 @@ spec:
         image: reg101.azurecr.io/myweb:latest
         ports:
         - containerPort: 80
-    
-        

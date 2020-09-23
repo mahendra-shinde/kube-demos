@@ -9,4 +9,3 @@ spec:
     name: web1
     ports: 
     - containerPort: 80
-
