@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  namespace: mahendra
+  labels:
+    name: testpod
+spec:
+  nodeSelector:
+    kubernetes.io/os: linux
+  imagePullSecrets:
+  - name: regsec
+  containers:
+  - name: myapp
+    image: reg101.azurecr.io/myweb
+    envFrom:
+     - secretRef:
+        name: secret1
+        optional: true
+    ports:
+      - containerPort: 80
