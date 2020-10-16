@@ -12,8 +12,10 @@ spec:
       labels:
         app: app2
     spec:
+      nodeSelector:
+        kubernetes.io/os: linux
       imagePullSecrets:
-          - name: secreg
+        - name: secreg
       containers:
       - name: web
         image: reg101.azurecr.io/myweb:latest
